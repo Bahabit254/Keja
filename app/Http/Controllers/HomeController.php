@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,16 +16,22 @@ class HomeController extends Controller
         return view('admin.home');
     } 
     else {
-        return view('user.home');
+        $products = product::paginate(6);
+
+        return view('user.home', compact('products'));
     } 
     }
 
     public function index() {
         if(Auth::id()) {
+
             return redirect('redirect');
         }
         else {
-           return view('user.home'); 
+
+            $products = product::all();
+
+           return view('user.home', compact('products'));
         }
         
     }

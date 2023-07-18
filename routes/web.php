@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,15 @@ Route::middleware([
 Route::get('/redirect', [HomeController::class, 'redirect']);
 
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/product', [AdminController::class, 'product']);
+
+Route::post('/productupload', [AdminController::class, 'productupload']);
+
+Route::get('/showproducts', [AdminController::class, 'showproducts']);
+
+Route::get('/deleteproduct/{id}', [AdminController::class, 'deleteproduct']);
+
+Route::get('/editproduct/{id}', [AdminController::class, 'editproduct']);
+
+Route::post('/productupdate/{id}', [AdminController::class, 'productupdate']);
