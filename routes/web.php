@@ -40,3 +40,11 @@ Route::get('/deleteproduct/{id}', [AdminController::class, 'deleteproduct']);
 Route::get('/editproduct/{id}', [AdminController::class, 'editproduct']);
 
 Route::post('/productupdate/{id}', [AdminController::class, 'productupdate']);
+
+Route::get('/searchbar', [HomeController::class, 'searchbar']);
+
+Route::post('/addCart/{id}', [HomeController::class, 'addCart']);
+
+Route::get('/cart', [HomeController::class, 'cart']);
+
+Route::get('/deletecart/{id}', [HomeController::class, 'deletecart']);
