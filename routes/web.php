@@ -48,3 +48,7 @@ Route::post('/addCart/{id}', [HomeController::class, 'addCart']);
 Route::get('/cart', [HomeController::class, 'cart']);
 
 Route::get('/deletecart/{id}', [HomeController::class, 'deletecart']);
+
+Route::get('/orders', [AdminController::class, 'orders']);
+
+Route::get('/delivery/{id}', [AdminController::class, 'delivery']);

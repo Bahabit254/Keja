@@ -117,17 +117,17 @@ https://templatemo.com/tm-546-sixteen-clothing
             @foreach($data as $cart)
             <tr>
                 <td>
-                    <input type="text" name='productname[]' value="{{$cart->name}}" hidden="" />
+                    <input type="text" name="productname[]" value="{{$cart->name}}" hidden="" />
                     {{$cart->name}}
 
                 </td>
                 <td>
-                    <input type="text" name='quantity[]' value="{{$cart->quantity}}" hidden="" />
+                    <input type="text" name="quantity[]" value="{{$cart->quantity}}" hidden="" />
                     {{$cart->quantity}}
 
                 </td>
                 <td>
-                    <input type="text" name='price[]' value="{{$cart->price}}" hidden="" />
+                    <input type="text" name="price[]" value="{{$cart->price}}" hidden="" />
                     {{$cart->price}}
                 </td>
                 <td> <a class="btn btn-danger" href="{{url('deletecart',$cart->id)}}" />Delete </td>

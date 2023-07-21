@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -19,7 +21,11 @@ class HomeController extends Controller
     else {
         $products = product::paginate(6);
 
-        return view('user.home', compact('products'));
+        $user=auth()->user();
+
+        $count = cart::where('phone', $user->phone)->count();
+
+        return view('user.home', compact('products', 'count'));
     } 
     }
 
@@ -33,9 +39,8 @@ class HomeController extends Controller
             $products = product::paginate(6);
 
             $user = auth()->user();
-            $count = cart::where('phone', $user->phone)->count();
 
-           return view('user.home', compact('products', 'count'));
+           return view('user.home', compact('products'));
         }
         
     }
@@ -95,7 +100,7 @@ class HomeController extends Controller
 
         $count = cart::where('phone', $user->phone)->count();
 
-        return view('user.cart', compact('count', 'data'));
+        return view('user.cart', compact('data','count'));
     }
 
     public function deletecart(Request $request, $id) 
@@ -106,6 +111,39 @@ class HomeController extends Controller
         return redirect()->back()->with('msg', 'Product removed from Cart');
 
 
+    }
+
+    public function orders(Request $request)
+    {
+        $user=auth()->user();
+
+        $name = $user->name;
+        $phone = $user->phone;
+        $address = $user->address;
+
+        foreach($request->product as $key=>$productname)
+        {
+            $order = new order;
+
+            $order->productname = $request->productname[$key];
+
+            $order->quantity = $request->quantity[$key];
+
+            $order->price = $request->price[$key];
+
+            $order->name=$name;
+
+            $order->phone=$phone;
+
+            $order->address=$address;
+
+            $order->save();
+
+        }
+
+        DB::table('cart')->where('phone', $phone)->delete();
+        
+        return redirect()->back()->with('msg', 'Order Has Been Placed');
     }
 
     
