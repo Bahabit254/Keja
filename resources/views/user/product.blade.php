@@ -13,7 +13,9 @@
             </div>
             
           </div>
+
           @foreach($products as $product)
+
           <div class="col-md-6">
             <div class="product-item">
               <a href="#"><img src="/productimage/{{ $product->image }}" alt=""></a>
@@ -36,6 +38,7 @@
               </div>
             </div>
           </div>
+          
           @endforeach
 
           @if(method_exists($products, 'links'))

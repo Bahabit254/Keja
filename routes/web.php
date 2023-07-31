@@ -52,3 +52,5 @@ Route::get('/deletecart/{id}', [HomeController::class, 'deletecart']);
 Route::get('/orders', [AdminController::class, 'orders']);
 
 Route::get('/delivery/{id}', [AdminController::class, 'delivery']);
+
+Route::get('/products', [HomeController::class, 'products']);

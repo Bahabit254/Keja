@@ -146,5 +146,11 @@ class HomeController extends Controller
         return redirect()->back()->with('msg', 'Order Has Been Placed');
     }
 
+    public function products()
+     
+    {
+        return view('user.products');
+    }
+
     
 }

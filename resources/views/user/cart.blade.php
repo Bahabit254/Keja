@@ -9,22 +9,18 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Sixteen Clothing HTML Template</title>
+    <title>Abacus Fashion House</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!--
 
-TemplateMo 546 Sixteen Clothing
 
-https://templatemo.com/tm-546-sixteen-clothing
-
--->
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="userdash/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="userdash/assets/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="userdash/assets/css/owl.css">
 
   </head>
 
@@ -44,29 +40,31 @@ https://templatemo.com/tm-546-sixteen-clothing
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Sixteen <em>Clothing</em></h2></a>
+          <a class="navbar-brand" href="userdash/index.html"><h2>Sixteen <em>Clothing</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
+                <a class="nav-link" href="userdash/index.html">Home
                   <span class="sr-only">(current)</span>
                 </a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="products.html">Our Products</a>
+                <a class="nav-link" href="userdash/products.html">Our Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-link" href="userdash/about.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="userdash/contact.html">Contact Us</a>
               </li>
               <li class="nav-item">
 
-              @if (Route::has('login'))
+                @if (Route::has('login'))
+
+
                     @auth
                       <a href="{{url('cart')}}" class="float-right"><i class="fa fa-shopping-cart" style="height: 30px; width: 30px;"></i>{{'$count'}}</a>
 
@@ -81,8 +79,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                       @if (Route::has('register'))
                         <li><a class="nav-link" href="{{ route('register') }}" >Register</a></li>
                       @endif
+
                     @endauth
-              @endif
+
+                @endif
 
               </li>
 
@@ -146,11 +146,11 @@ https://templatemo.com/tm-546-sixteen-clothing
 
 
     <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
+    <script src="userdash/assets/js/custom.js"></script>
+    <script src="userdash/assets/js/owl.js"></script>
+    <script src="userdash/assets/js/slick.js"></script>
+    <script src="userdash/assets/js/isotope.js"></script>
+    <script src="userdash/assets/js/accordions.js"></script>
 
 
     <script language = "text/Javascript"> 
