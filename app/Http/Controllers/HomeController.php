@@ -152,5 +152,15 @@ class HomeController extends Controller
         return view('user.products');
     }
 
-    
+    public function about() 
+    {
+        return view('user.about');
+
+    }
+
+    public function samplepage () 
+    {
+        return view('samplepage');
+    }
+  
 }

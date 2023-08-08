@@ -28,19 +28,19 @@
             </tr>  
         </thead>
         <tbody>
-            @foreach($orders as $order)
-            <tr>
-                <td>{{$order->name}}</td>
-                <td>{{$order->phone}}</td>
-                <td>{{$order->address}}</td>
-                <td>{{$order->product}}</td>
-                <td>{{$order->quantity}}</td>
-                <td>{{$order->price}}</td>
-                <td>{{$order->status}}</td>
+            @foreach($order as $orders)
+              <tr>
+                <td>{{$orders->name}}</td>
+                <td>{{$orders->phone}}</td>
+                <td>{{$orders->address}}</td>
+                <td>{{$orders->product}}</td>
+                <td>{{$orders->quantity}}</td>
+                <td>{{$orders->price}}</td>
+                <td>{{$orders->status}}</td>
                 <td>
                     <a class="btn btn-success" href="{{url('delivery', $order->id)}}">Deliver</a>
                 </td>
-            </tr>
+              </tr>
             @endforeach
             
         </tbody>

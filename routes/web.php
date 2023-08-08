@@ -54,3 +54,7 @@ Route::get('/orders', [AdminController::class, 'orders']);
 Route::get('/delivery/{id}', [AdminController::class, 'delivery']);
 
 Route::get('/products', [HomeController::class, 'products']);
+
+Route::get('/about', [HomeController::class, 'about']);
+
+Route::get('/samplepage', [HomeController::class, 'samplepage']);

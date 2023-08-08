@@ -49,8 +49,6 @@
                             <td> <a class="btn btn-info" href="{{url('editproduct',$product->id)}}" />Edit </td>
                             <td> <a class="btn btn-danger" href="{{url('deleteproduct',$product->id)}}" />Delete </td>
                             <td> {{ $product->quantity }} </td>
-                            
-                            
                           </tr>
                           @endforeach
                         </tbody>

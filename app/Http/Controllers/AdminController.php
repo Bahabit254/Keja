@@ -80,11 +80,11 @@ class AdminController extends Controller
 
     public function delivery(Request $request, $id)
     {
-        $order = order::find($id);
+        $orders = order::find($id);
 
-        $order->status = 'Delivered';
+        $orders->status = 'Delivered';
 
-        $order->save();
+        $orders->save();
 
         return redirect()->back()->with('msg', 'Order Has Been Sent');
     }
